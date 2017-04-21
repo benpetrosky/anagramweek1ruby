@@ -1,6 +1,6 @@
 class String
   define_method(:word) do |second_word|
-    first_input = self.delete(' ').downcase()
+    first_input = self.delete(' ' '!' '?' '.').downcase()
     first_array = first_input.split("")
     second_input = second_word.downcase()
     second_array = second_input.split("")
@@ -16,6 +16,14 @@ class String
 
     elsif (first_array.reverse() == second_array)
       responses.fetch(4)
+    end
+
+    elsif (first_array.reverse() == second_array)
+      responses.fetch(3)
+    end
+
+    elsif (first_array.reverse() == second_array)
+      responses.fetch(3)
     end
   end
 end

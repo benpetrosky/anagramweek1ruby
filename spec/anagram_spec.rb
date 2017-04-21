@@ -10,7 +10,10 @@ describe('String#anagram') do
   end
 
   it('accounts for entries that are palindromes') do
-    expect(('desserts').word('stressed')).to(eq("These words are palindromes."))
+    expect(('dess erts').word('stressed')).to(eq("These words are palindromes."))
+  end
+  it('accounts for entries that are anagrams') do
+    expect(('desserts').word('stressed')).to(eq("TThese words are anagrams."))
   end
 end
 

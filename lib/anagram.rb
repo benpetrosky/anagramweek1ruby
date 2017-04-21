@@ -2,7 +2,7 @@ class String
   define_method(:word) do |second_word|
     first_input = self.delete(' ' '!' '?' '.').downcase()
     first_array = first_input.split("")
-    second_input = second_word.downcase()
+    second_input = second_word.delete(' ' '!' '?' '.').downcase()
     second_array = second_input.split("")
 
     responses = {1 => "You entered the exact same word twice", 2 => "Atleast one of your entries does not have any vowels and is therefore not actually a word dum dum.", 3 => "These words are anagrams.", 4=> "These words are palindromes.", 5 => "These words have no letter matches and are antigrams."}
@@ -16,14 +16,12 @@ class String
 
     elsif (first_array.reverse() == second_array)
       responses.fetch(4)
-    end
 
-    elsif (first_array.reverse() == second_array)
-      responses.fetch(3)
-    end
 
-    elsif (first_array.reverse() == second_array)
+
+    elsif (first_array.uniq.sort == second_array.uniq.sort)
       responses.fetch(3)
+
     end
   end
 end

@@ -7,7 +7,7 @@ get('/') do
   erb(:index)
 end
 
-# get('/anagram_answer') do
-#   @anagram = params.fetch('anagram').word()
-#   erb(:anagram_answer)
+get('/input') do
+  @anagram = params.fetch('first_input').word('second_input')
+  erb(:anagram_answer)
 end

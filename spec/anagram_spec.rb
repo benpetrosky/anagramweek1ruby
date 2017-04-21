@@ -2,12 +2,12 @@ require('rspec')
 require('./lib/anagram')
 
 describe('String#anagram') do
-  it('puts all inputs to lower case') do
+  it('identifies when two entries are the same word') do
     expect(('mariners').word('mariners')).to(eq("You entered the exact same word twice"))
   end
-  # it('does not accept inputs that do not contain vowels') do
-  #   expect((['qwTgb', '']).word()).to(eq('That\'s not actually a word dum dum.'))
-  # end
+  it('does not accept inputs that do not contain vowels') do
+    expect(('qwTgb').word('lkjrwt')).to(eq("Atleast one of your entries does not have any vowels and is therefore not actually a word dum dum."))
+  end
   # it('does not accept inputs that do not contain vowels') do
   #   expect(('').word()).to(eq('mariners'))
   # end

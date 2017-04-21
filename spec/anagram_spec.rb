@@ -5,12 +5,13 @@ describe('String#anagram') do
   it('identifies when two entries are the same word') do
     expect(('mariners').word('mariners')).to(eq("You entered the exact same word twice"))
   end
-  it('does not accept inputs that do not contain vowels') do
+  it('accounts for entries without any vowels') do
     expect(('qwTgb').word('lkjrwt')).to(eq("Atleast one of your entries does not have any vowels and is therefore not actually a word dum dum."))
   end
-  # it('does not accept inputs that do not contain vowels') do
-  #   expect(('').word()).to(eq('mariners'))
-  # end
+
+  it('accounts for entries that are palindromes') do
+    expect(('desserts').word('stressed')).to(eq("These words are palindromes."))
+  end
 end
 
 
